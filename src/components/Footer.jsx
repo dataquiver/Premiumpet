@@ -10,7 +10,7 @@ export default function Footer(){
             no 59, Rajshekar Nilaya<br />
             Srinivas Colony
             ,GT Layout, Uttarahalli Bangalore : 560061<br />
-            <a href="tel:+19738538159">(973) 853-8159</a><br />
+            <a href="tel:+919738538159">(973) 853-8159</a><br />
             <div>Developed By: DataQuiver.in</div>
             <a href="mailto:hello@yourbusiness.com">hello@yourbusiness.com</a>
           </address>

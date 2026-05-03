@@ -1,9 +1,9 @@
 import React from 'react'
 
 const plans = [
-  {name:'Boarding - Standard', price:'$40/night', desc:'Shared playtime, comfortable resting area.'},
-  {name:'Boarding - Premium', price:'$65/night', desc:'Private suite, extra play sessions, nightly photo update.'},
-  {name:'Daycare', price:'$28/day', desc:'Full-day supervised play and rest.'}
+  {name:'Boarding - Standard', price:'650-Rs/day', desc:'Shared playtime, comfortable resting area.'},
+  {name:'Boarding - Premium', price:'850-Rs/night', desc:'Private suite, extra play sessions, regular photo update.'},
+  {name:'Daycare', price:'500-Rs/day', desc:'Full-day supervised play and rest.'}
 ]
 
 export default function Pricing(){

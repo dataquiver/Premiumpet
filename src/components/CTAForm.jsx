@@ -14,7 +14,7 @@ export default function CTAForm(props){
     }
     setError('')
     // Send booking details via WhatsApp (opens in new tab)
-    const phoneNumber = '19738538159' // international format without +
+    const phoneNumber = '+919738538159' // international format without +
     const message = encodeURIComponent(
       `Booking request:\nName: ${form.name}\nPhone: ${form.phone}${form.email?`\nEmail: ${form.email}`:''}\nPet: ${form.pet}\nService: ${form.service}\nNotes: ${form.notes}`
     )
@@ -42,7 +42,7 @@ export default function CTAForm(props){
         {error && <div className="form-error" role="alert">{error}</div>}
         <div className="form-actions">
           <button className="btn btn-primary" type="submit">Book Now</button>
-          <a className="btn btn-outline" href="tel:+19738538159">Call: (973) 853-8159</a>
+          <a className="btn btn-outline" href="tel:+919738538159">Call: (973) 853-8159</a>
         </div>
       </form>
     </section>
