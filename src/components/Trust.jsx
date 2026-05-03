@@ -1,6 +1,6 @@
 import React from 'react'
-import pet1 from '../assets/pet1.svg'
-import pet2 from '../assets/pet2.svg'
+import pet1 from '../Assets/pet1.svg'
+import pet2 from '../Assets/pet2.svg'
 
 const testimonials = [
   { name: 'Sarah P.', text: 'They treated Luna like family — daily photos and updates put me at ease.' , stars:5, avatar: pet1},
