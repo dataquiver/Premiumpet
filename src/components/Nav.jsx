@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import logo from '../logo/logo.webp'
 
 const LINKS = [
   {id: 'services', label: 'Services'},
@@ -22,8 +23,8 @@ export default function Nav(){
     function updateMenuTop(){
       const navEl = navRef.current
       if(!navEl) return
-      const headerEl = navEl.closest('header')
-      const top = headerEl ? Math.round(headerEl.getBoundingClientRect().height) : Math.round(navEl.getBoundingClientRect().height)
+      // Use the nav layout height so visual logo overflow does not create a fake gap.
+      const top = Math.round(navEl.offsetHeight)
       document.documentElement.style.setProperty('--mobile-menu-top', `${Math.max(0, top)}px`)
     }
 
@@ -67,6 +68,12 @@ export default function Nav(){
 
   useEffect(()=>{
     function onScroll(){
+      // Active section tracking applies on home where anchor sections exist.
+      if(location.pathname !== '/'){
+        setActive('')
+        return
+      }
+
       let current = ''
       for(const link of LINKS){
         const el = document.getElementById(link.id)
@@ -77,10 +84,11 @@ export default function Nav(){
       }
       setActive(current)
     }
+
     onScroll()
     window.addEventListener('scroll', onScroll, {passive:true})
     return ()=> window.removeEventListener('scroll', onScroll)
-  },[])
+  },[location.pathname])
 
   function scrollTo(e, id){
     e.preventDefault()
@@ -109,7 +117,9 @@ export default function Nav(){
 
   return (
     <nav ref={navRef} className="nav container nav-sticky" aria-label="Main navigation">
-      <div className="brand">Premium Pet Boarding</div>
+      <div className="brand" aria-label="Premium Pet Boarding">
+        <img src={logo} alt="Premium Pet logo" className="brand-logo" />
+      </div>
 
       <button ref={toggleRef} className={`hamburger ${open? 'open':''}`} aria-label="Toggle menu" onClick={()=>setOpen(!open)}>
         <span />
