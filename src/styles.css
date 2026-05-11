@@ -22,6 +22,7 @@
 /* Base */
 *{box-sizing:border-box}
 html, body, #root{height:100%}
+html, body{overflow-x:hidden}
 body{
   margin:0;
   font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
@@ -32,7 +33,7 @@ body{
 }
 
 .container{max-width:var(--container);margin:0 auto;padding:0 24px}
-.site-root{background:var(--bg-light)}
+.site-root{background:var(--bg-light);overflow-x:clip}
 
 /* Typography Scale (H1: 40-48px, H2: 28-32px, H3: 22-24px, body: 16-18px) */
 h1{
@@ -238,6 +239,14 @@ header{
 .nav-actions{
   display:flex;
   gap:12px;
+}
+
+.nav-backdrop{
+  display:none;
+}
+
+body.menu-open{
+  overflow:hidden;
 }
 
 /* Hero Section */
@@ -815,28 +824,68 @@ header{
   h1{font-size:36px}
   h2{font-size:28px}
   h3{font-size:20px}
+
+  .nav{
+    padding:12px 0;
+  }
+
+  .brand{
+    max-width:70%;
+    font-size:18px;
+    line-height:1.2;
+  }
   
   .nav-links{
     position:fixed;
-    top:60px;
+    top:var(--mobile-menu-top, 64px);
     right:0;
     flex-direction:column;
-    width:280px;
-    height:calc(100vh - 60px);
+    align-items:flex-start;
+    width:min(84vw, 320px);
+    height:calc(100dvh - var(--mobile-menu-top, 64px));
     background:linear-gradient(180deg, var(--white), #f8f9fa);
-    gap:8px;
+    gap:6px;
     padding:20px;
     transform:translateX(110%);
     transition:var(--transition);
     box-shadow:-6px 0 24px rgba(0,0,0,0.08);
+    z-index:90;
+    overflow-y:auto;
+  }
+
+  .nav-links li,
+  .nav-links a{
+    width:100%;
   }
   
   .nav-links.open{
     transform:translateX(0);
   }
+
+  .nav-backdrop{
+    display:block;
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    top:var(--mobile-menu-top, 64px);
+    background:rgba(17, 24, 39, 0.28);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.25s ease;
+    z-index:80;
+    border:0;
+    padding:0;
+  }
+
+  .nav-backdrop.open{
+    opacity:1;
+    pointer-events:auto;
+  }
   
   .hamburger{
     display:block;
+    z-index:100;
   }
   
   .nav-actions{

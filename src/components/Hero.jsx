@@ -1,4 +1,5 @@
 import React from 'react'
+import boarding3 from '../Assets/boarding3.webp'
 
 export default function Hero(){
   return (
@@ -18,7 +19,7 @@ export default function Hero(){
           </ul>
         </div>
         <div className="hero-media">
-          <img src="/src/assets/boarding3.jpg" alt="Happy dogs having fun at boarding facility" />
+          <img src={boarding3} alt="Happy dogs having fun at boarding facility" loading="eager" decoding="async" />
         </div>
       </div>
     </section>

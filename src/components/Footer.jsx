@@ -11,7 +11,6 @@ export default function Footer(){
             Srinivas Colony
             ,GT Layout, Uttarahalli Bangalore : 560061<br />
             <a href="tel:+919738538159">(973) 853-8159</a><br />
-            <div>Developed By: DataQuiver.in</div>
             <a href="mailto:hello@yourbusiness.com">hello@yourbusiness.com</a>
           </address>
         </div>
@@ -31,7 +30,11 @@ export default function Footer(){
           </ul>
         </div>
       </div>
-      <div className="container footer-note">© {new Date().getFullYear()} Premium Pet Boarding — Proudly serving YourCity.</div>
+      <div className="container footer-note">
+        © {new Date().getFullYear()} Premium Pet Boarding — Proudly serving YourCity.
+        <br />
+        Dev by <a href="https://dataquiver.in" target="_blank" rel="noreferrer">DataQuiver</a>
+      </div>
     </footer>
   )
 }

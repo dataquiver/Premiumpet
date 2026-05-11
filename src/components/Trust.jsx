@@ -8,6 +8,12 @@ const testimonials = [
 ]
 
 export default function Trust(){
+  function onAvatarError(e){
+    if(e.currentTarget.src !== pet1){
+      e.currentTarget.src = pet1
+    }
+  }
+
   return (
     <section id="testimonials" className="trust container">
       <h2>Trusted by Pet Owners</h2>
@@ -17,7 +23,14 @@ export default function Trust(){
           {testimonials.map((t,i)=> (
             <div key={i} className="testimonial">
               <div className="review-head">
-                <img src={t.avatar} alt={`${t.name} avatar`} className="avatar" />
+                <img
+                  src={t.avatar}
+                  alt={`${t.name} avatar`}
+                  className="avatar"
+                  loading="lazy"
+                  decoding="async"
+                  onError={onAvatarError}
+                />
                 <div>
                   <strong>{t.name}</strong>
                   <div className="stars" aria-hidden>{'★'.repeat(t.stars)}</div>
