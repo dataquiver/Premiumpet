@@ -3,8 +3,10 @@ import pet1 from '../Assets/pet1.svg'
 import pet2 from '../Assets/pet2.svg'
 
 const testimonials = [
-  { name: 'Sarah P.', text: 'They treated Luna like family — daily photos and updates put me at ease.' , stars:5, avatar: pet1},
-  { name: 'Mark R.', text: 'Excellent staff and clean facility. Highly recommend for dog boarding.' , stars:5, avatar: pet2},
+  { name: 'Priya M.', text: 'Best place to leave Max when I travel. Staff sends updates daily. My dog comes back happy and tired!' , stars:5, avatar: pet1},
+  { name: 'Rajesh K.', text: 'Professional grooming and boarding. They really care about each dog. Highly recommend!' , stars:5, avatar: pet2},
+  { name: 'Anjali V.', text: 'Great daycare service. My pup loves going there. Clean, safe, and loving staff.' , stars:5, avatar: pet1},
+  { name: 'Amit S.', text: 'Finally found a reliable pet boarding in Bangalore. Trust them completely with my dog.' , stars:5, avatar: pet2},
 ]
 
 export default function Trust(){

@@ -25,11 +25,11 @@ export default function CTAForm(props){
     <section className="cta container" id={props.id}>
       <h2>Request a Booking or Quote</h2>
       <form className="cta-form" onSubmit={submit} noValidate>
-        <label>Name<input name="name" value={form.name} onChange={handle} required placeholder="Full name" /></label>
-        <label>Phone<input name="phone" value={form.phone} onChange={handle} required placeholder="Phone number" /></label>
-        <label>Email<input name="email" type="email" value={form.email} onChange={handle} required placeholder="you@example.com" /></label>
-        <label>Pet Details<input name="pet" value={form.pet} onChange={handle} placeholder="Breed, age, special needs" /></label>
-        <label>Service
+        <label><span className="form-field-number">1.</span> Name<input name="name" value={form.name} onChange={handle} required placeholder="Full name" /></label>
+        <label><span className="form-field-number">2.</span> Phone<input name="phone" value={form.phone} onChange={handle} required placeholder="(+91) Phone number" /></label>
+        <label><span className="form-field-number">3.</span> Email<input name="email" type="email" value={form.email} onChange={handle} placeholder="you@example.com" /></label>
+        <label><span className="form-field-number">4.</span> Pet Details<input name="pet" value={form.pet} onChange={handle} placeholder="Breed, age, special needs" /></label>
+        <label><span className="form-field-number">5.</span> Service
           <select name="service" value={form.service} onChange={handle}>
             <option>Dog Boarding</option>
             <option>Daycare</option>
@@ -38,11 +38,11 @@ export default function CTAForm(props){
             <option>Dog Walking</option>
           </select>
         </label>
-        <label>Notes<textarea name="notes" value={form.notes} onChange={handle} placeholder="Any special instructions" /></label>
+        <label><span className="form-field-number">6.</span> Notes<textarea name="notes" value={form.notes} onChange={handle} placeholder="Any special instructions" /></label>
         {error && <div className="form-error" role="alert">{error}</div>}
         <div className="form-actions">
           <button className="btn btn-primary" type="submit">Book Now</button>
-          <a className="btn btn-outline" href="tel:+919738538159">Call: (973) 853-8159</a>
+          <a className="btn btn-outline" href="tel:+919738538159">Call: (+91) 973 853 8159</a>
         </div>
       </form>
     </section>
